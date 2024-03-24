@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hover Effect</title>
+<style>
+  .button-container {
+    position: relative;
+    display: inline-block;
+  }
+
+  .button {
+    padding: 10px 20px;
+    background-color: #ccc;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 16px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .button::before,
+  .button::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 3px;
+    background-color: #ff5733;
+    transition: width 0.3s ease;
+  }
+
+  .button::before {
+    top: 0;
+    left: 0;
+  }
+
+  .button::after {
+    bottom: 0;
+    right: 0;
+  }
+
+  .button-container:hover .button::before {
+    width: 100%;
+  }
+
+  .button-container:hover .button::after {
+    width: 100%;
+  }
+</style>
+</head>
+<body>
+
+<div class="button-container">
+  <button class="button">Наведите мышь</button>
+</div>
+
+</body>
+</html>
