@@ -1,0 +1,49 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  padding-top: 40px;
+}
+.list-item {
+  display: inline-block;
+  position: relative;
+  margin: 0 25px;
+  padding: 5px 15px;
+  /* border: 2px solid rebeccapurple; */
+}
+.list {
+  height: 200vh;
+  text-align: center;
+  
+}
+.list-item::before {
+  content: "";
+  display: block;
+  position: absolute;
+  transition: width 2s;
+  top: -10px;
+  left: 0;
+  height: 3px;
+  background-color: blue;
+  width: 0;
+}
+
+.list-item::after {
+  content: "";
+  display: block;
+  position: absolute;
+  transition: width 2s;
+  bottom: -10px;
+  right: 0;
+  height: 3px;
+  background-color: blue;
+  width: 0;
+}
+
+
+.list-item:hover::before{
+  width: 100%;
+}
+.list-item:hover::after{
+  width: 100%;
+}
